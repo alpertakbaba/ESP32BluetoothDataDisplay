@@ -1,56 +1,236 @@
 <!-- res/layout/activity_main.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textViewTest"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/black"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:scrollbarSize="30dp">
 
 
     <!-- Current Lap verisini göstermek için TextView -->
 
     <!-- Prev Lap verilerini listelemek için ListView -->
 
+
     <TextView
         android:id="@+id/textViewCurrentLap"
-        android:layout_width="210dp"
-        android:layout_height="165dp"
-
+        android:layout_width="246dp"
+        android:layout_height="94dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginBottom="-10dp"
+        android:fontFamily="@font/afont_w01"
         android:gravity="center"
         android:padding="8dp"
-        android:text="Current Lap: -"
         android:textColor="#FFFFFF"
-        android:textSize="24sp" />
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:id="@+id/listViewPrevLap"
-        android:layout_width="325dp"
-        android:layout_height="88dp"
+        android:layout_width="242dp"
+        android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="339dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="-25dp"
+        android:layout_marginEnd="-320dp"
         android:layout_weight="1"
         android:dividerHeight="1dp"
-        android:padding="24dp" />
+        android:fontFamily="@font/afont_w01"
+        android:padding="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDelta"
+        app:layout_constraintTop_toBottomOf="@+id/prevLapText" />
+
+    <TextView
+        android:id="@+id/textViewDelta"
+        android:layout_width="850dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="-51dp"
+        android:background="#000000"
+        android:fontFamily="@font/afont_w01"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="96sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFast" />
 
     <TextView
         android:id="@+id/textViewPitArea"
-        android:layout_width="656dp"
-        android:layout_height="143dp"
+        android:layout_width="850dp"
+        android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="0dp"
+
+        android:layout_marginEnd="-50dp"
         android:background="#3F51B5"
+        android:fontFamily="@font/afont_w01"
         android:gravity="center"
-        android:text="PIT"
+        android:text="PIT AREA"
         android:textColor="#FFFFFF"
-        android:textSize="34sp" />
+        android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFast"
+        android:layout_width="244dp"
+        android:layout_height="76dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-15dp"
+        android:fontFamily="@font/afont_w01"
+        android:gravity="center"
+        android:textColor="#37FF00"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/viewMiddle"
+        app:layout_constraintTop_toBottomOf="@+id/fastestLapText" />
 
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/currLapText"
+        android:layout_width="264dp"
+        android:layout_height="89dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-580dp"
+        android:layout_marginBottom="-50dp"
+        android:fontFamily="@font/afont_w01"
+        android:gravity="center"
+        android:text="Current Lap"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCurrentLap"
+        app:layout_constraintEnd_toStartOf="@+id/textViewDelta" />
+
+    <TextView
+        android:id="@+id/prevLapText"
+        android:layout_width="226dp"
+        android:layout_height="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="@font/afont_w01"
+        android:gravity="center"
+        android:text="Last Lap"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fastestLapText"
+        android:layout_width="183dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/afont_w01"
+        android:gravity="center"
+        android:text="Fastest Lap"
+        android:textColor="#36FF00"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewMiddle"
+        android:layout_width="110dp"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="300dp"
+        android:background="#403E3E"
+        android:rotation="90
+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewRight"
+        android:layout_width="198dp"
+        android:layout_height="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginBottom="42dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/viewRightRotated"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/viewRight2"
+        android:layout_width="198dp"
+        android:layout_height="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-105dp"
+        android:layout_marginBottom="42dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/viewRightRotated2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/viewRightRotated"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/white"
+        android:rotation="-60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/viewRightRotated2"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/white"
+        android:rotation="60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewLap"
+        android:layout_width="65dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="-75dp"
+        android:layout_marginBottom="27dp"
+        android:fontFamily="@font/afont_w01"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/viewRight" />
+
+    <TextView
+        android:id="@+id/textViewnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-48dp"
+        android:fontFamily="@font/afont_w01"
+        android:text="Lap"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewLap" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

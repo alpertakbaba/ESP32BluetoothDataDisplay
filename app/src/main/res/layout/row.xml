@@ -3,6 +3,7 @@
     android:id="@android:id/text1"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:layout_width="fill_parent"
-    android:textSize="18dp"
+    android:textSize="22dp"
     android:textColor="@color/white"
+    android:fontFamily="@font/afont_w01"
     />

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transition xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/backgroundgreen" /> <!-- Başlangıç arka planı (yeşil) -->
+    <item android:drawable="@drawable/backgroundred" /> <!-- Bitiş arka planı (kırmızı) -->
+</transition>
